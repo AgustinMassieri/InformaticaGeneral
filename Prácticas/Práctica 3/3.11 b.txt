@@ -1,0 +1,42 @@
+def mensaje (caños1m,caños5m,metrostotales):
+    cociente=metrostotales//5
+    resto=metrostotales%5
+    caños5mnecesito=cociente
+    caños1mnecesito=resto
+    
+    if metrostotales//(caños5m*5)==1:
+        print("Es posible cubrir el tendido")
+        print("Sugerencia")
+        print("{} unidades de caño de 5 metros".format(caños5mnecesito))
+        print("{} unidades de caño de 1 metro".format(caños1mnecesito))
+    
+    elif metrostotales//caños1m==1:
+        print("Es posible cubrir el tendido")
+        print("Sugerencia")
+        print("{} unidades de caño de 5 metros".format(caños5mnecesito))
+        print("{} unidades de caño de 1 metro".format(caños1mnecesito))
+    
+    elif caños5mnecesito<=caños5m and caños1mnecesito<=caños1m:
+        print("Es posible cubrir el tendido")
+        print("Sugerencia")
+        print("{} unidades de caño de 5 metros".format(caños5mnecesito))
+        print("{} unidades de caño de 1 metro".format(caños1mnecesito))
+    
+    else:
+        print("No es posible cubrir el tendido")
+        
+
+def main ():
+    caños1m=int(input("Cantidad de caños de 1 metro: "))
+    while caños1m <=0:
+        caños1m=int(input("Cantidad de caños de 1 metro: "))
+    
+    caños5m=int(input("Cantidad de caños de 5 metros: "))
+    while caños5m <=0:
+        caños5m=int(input("Cantidad de caños de 5 metros: "))
+    
+    metrostotales=int(input("Metros totales a cubrir: "))
+    while metrostotales <=0:
+       metrostotales=int(input("Metros totales a cubrir: "))
+    mensaje(caños1m,caños5m,metrostotales)
+main()
